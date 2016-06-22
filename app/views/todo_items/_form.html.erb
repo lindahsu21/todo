@@ -1,0 +1,5 @@
+ <%= form_for([@todo_list,  @todo_list.todo_items.build]) do  |f| %>
+ 	<%= f.text_field :content, placeholder: "새로운 할일?" %>
+ 	<%= f.submit '새로운 할일 ^^' %>
+ <% end %> 
+

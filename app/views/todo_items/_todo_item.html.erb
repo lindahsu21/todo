@@ -1,0 +1,29 @@
+
+<div class="row clearfix">
+	<% if todo_item.completed? %>
+	
+	<div class="todo_item">
+		<p style="opacity: 0.4;"><strike><%= todo_item.content %></strike></p>
+		</div>
+			<div class="complete">
+			<%= link_to "다했어요", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %> 
+		</div>
+	<div class="trash">
+	 <%= link_to '할일 지우기', todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: '정말로 할일을 지우시게요?' } %> 
+	</div>
+
+	<% else %>
+		
+	<div class="todo_item">
+		<p><%= todo_item.content %></p>
+		</div>
+		<div class="complete">
+			<%= link_to "다했어요", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %> 
+		</div>
+	<div class="trash">
+	 <%= link_to '할일 지우기', todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: '정말로 할일을 지우시게요?' } %> 
+	</div>
+	<% end %>
+</div>
+
+
